@@ -1,0 +1,68 @@
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	color: var(--color-text);
+	background: var(--color-background);
+	font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 10px;
+}
+
+.container {
+	height: 100vh;
+	min-height: 100vh;
+	width: 100%;
+}
+
+.row {
+	display: flex;
+}
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	padding: 1.5rem;
+	align-items: center;
+}
+
+.navbar-links {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-link {
+	margin: 0 1.5rem;
+}
+
+.navbar-link a {
+	color: inherit;
+	text-decoration: none;
+	font-family: 'Space Grotesk', sans-serif;
+}
+
+h1 {
+	font-family: 'Space Grotesk', sans-serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.column {
+  width: 50%;
+  height: 100%;
+}
