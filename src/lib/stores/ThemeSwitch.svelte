@@ -30,7 +30,7 @@
 			viewBox="0 0 24 24"
 			width="24"
 			height="24"
-			stroke="currentColor"
+			stroke="#fff"
 			stroke-width="2"
 			fill="none"
 			stroke-linecap="round"
