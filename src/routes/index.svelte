@@ -1,3 +1,49 @@
+<script>
+	import BlogCard from '$lib/components/BlogCard.svelte';
+	import Masonry from '$lib/components/Masonry.svelte';
+
+	let blogs = [
+		{
+			image: 'https://source.unsplash.com/random/300x200',
+			title: 'Investing In CryptoCurrencies Quickstart',
+			content: 'Some weird descriptions here that shows small small description',
+			slug: 'Blog'
+		},
+		{
+			image: 'https://source.unsplash.com/random/2',
+			title: 'Investing In CryptoCurrencies Quickstart',
+			content: 'Some weird descriptions here that shows small small description',
+			slug: 'Blog'
+		},
+		{
+			image: 'https://source.unsplash.com/random/300x200?sig=4',
+			title: 'Investing In CryptoCurrencies Quickstart',
+			content: 'Some weird descriptions here that shows small small description',
+			slug: 'Blog'
+		},
+		{
+			image: 'https://source.unsplash.com/random/3',
+			title: 'Investing In CryptoCurrencies Quickstart',
+			content: 'Some weird descriptions here that shows small small description',
+			slug: 'Blog'
+		},
+		{
+			image: 'https://source.unsplash.com/random/300x200?sig=10',
+			title: 'Investing In CryptoCurrencies Quickstart',
+			content: 'Some weird descriptions here that shows small small description',
+			slug: 'Blog'
+		},
+		{
+			image: 'https://source.unsplash.com/random/5',
+			title: 'Investing In CryptoCurrencies Quickstart',
+			content: 'Some weird descriptions here that shows small small description',
+			slug: 'Blog'
+		}
+	];
+
+	// if (blogs.length && )
+</script>
+
 <div class="row blogs">
 	<div class="column">
 		<div class="recent-blog-image">
@@ -5,41 +51,21 @@
 			<h1>Create Beautiful Charts with Svelte And Chart JS</h1>
 		</div>
 	</div>
-	<div class="column other-blogs">
-		<div class="blog-card">
-			<img src="https://source.unsplash.com/random/300x200" alt="" />
-			<h4>Investing In CryptoCurrencies Quickstart</h4>
-			<p>Some weird descriptions here that shows small small description</p>
-		</div>
-		<div class="blog-card">
-			<img src="https://source.unsplash.com/random/3" alt="" />
-			<h4>Investing In CryptoCurrencies Quickstart</h4>
-			<p>Some weird descriptions here that shows small small description</p>
-		</div>
-		<div class="blog-card">
-			<img src="https://source.unsplash.com/random/300x200?sig=3" alt="" />
-			<h4>Investing In CryptoCurrencies Quickstart</h4>
-			<p>Some weird descriptions here that shows small small description</p>
-		</div>
-		<div class="blog-card">
-			<img src="https://source.unsplash.com/random/5" alt="" />
-			<h4>Investing In CryptoCurrencies Quickstart</h4>
-			<p>Some weird descriptions here that shows small small description</p>
-		</div>
-		<div class="blog-card">
-			<img src="https://source.unsplash.com/random/6" alt="" />
-			<h4>Investing In CryptoCurrencies Quickstart</h4>
-			<p>Some weird descriptions here that shows small small description</p>
-		</div>
-	</div>
+	<!-- <div class="column other-blogs"> -->
+	<Masonry items={blogs} gridGap="1rem 0.5rem">
+		{#each blogs as blogData}
+			<BlogCard
+				imageURL={blogData.image}
+				title={blogData.title}
+				description={blogData.content}
+				slugField={blogData.slug}
+			/>
+		{/each}
+	</Masonry>
 </div>
 
+<!-- </div> -->
 <style>
-	.blogs {
-		/* max-height: 100vh; */
-		/* height: 100vh; */
-		overflow-y: hidden;
-	}
 	.recent-blog-image {
 		margin-right: 1rem;
 	}
@@ -69,42 +95,5 @@
 		position: fixed;
 		bottom: 4rem;
 		margin-left: 4rem;
-	}
-
-	.other-blogs {
-		width: 50%;
-		/* display: grid; */
-		/* grid-template-columns: repeat(2, 1fr); 
-		grid-template-rows: repeat(auto-fit, minmax(30%, 1fr));
-		grid-template-rows: masonry;
-		grid-template-columns: masonry; */
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1rem 0.5rem;
-		/* grid-auto-flow: dense; */
-
-		/* gap: 10px; */
-	}
-
-	.blog-card {
-		width: 100%;
-		border-radius: 3rem;
-		height: max-content;
-	}
-	.blog-card h4 {
-		font-size: 1rem;
-	}
-	.blog-card img {
-		width: 90%;
-		height: min-content;
-		object-fit: cover;
-	}
-
-	@supports (grid-template-rows: masonry) {
-		.other-blogs {
-			width: 50%;
-			display: grid;
-			grid-template-rows: masonry;
-		}
 	}
 </style>
