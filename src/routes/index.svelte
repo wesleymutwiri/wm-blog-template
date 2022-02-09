@@ -52,7 +52,7 @@
 		</div>
 	</div>
 	<!-- <div class="column other-blogs"> -->
-	<Masonry items={blogs} gridGap="1rem 0.5rem">
+	<Masonry items={blogs} gridGap="2rem">
 		{#each blogs as blogData}
 			<BlogCard
 				imageURL={blogData.image}

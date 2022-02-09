@@ -6,19 +6,21 @@
 <svelte:window bind:scrollY={y} />
 
 <nav class:scrolled={y !== 0} class="navbar">
-	<div class="title">WM</div>
+	<div class="title">
+		<a href="/"> WM </a>
+	</div>
 	<div class="navbar-links">
 		<div class="navbar-link">
-			<a href="#"> About </a>
+			<a href="/about"> About </a>
 		</div>
 		<div class="navbar-link">
-			<a href="#"> Blog </a>
+			<a href="/blog"> Blog </a>
 		</div>
 		<div class="navbar-link">
-			<a href="#"> Category </a>
+			<a href="/category"> Category </a>
 		</div>
 		<div class="navbar-link">
-			<a href="#"> Tag </a>
+			<a href="/tag"> Tag </a>
 		</div>
 		<div class="theme-changer">
 			<ThemeSwitch />
@@ -49,10 +51,12 @@
 	.navbar-links {
 		display: flex;
 		align-items: center;
+		padding-right: 2rem ;
 	}
 
 	.navbar-link {
 		margin: 0 1.5rem;
+		position: relative;
 	}
 
 	.navbar-link a {
@@ -60,6 +64,24 @@
 		text-decoration: none;
 		font-family: 'Space Grotesk', sans-serif;
 	}
+
+	.navbar-link::after {
+		content: '';
+		position: absolute;
+		width: calc(100% + 20px);
+		height: 2px;
+		background: var(--color-text);
+		bottom: -10px;
+		left: 0;
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 0.5s ease-in-out;
+	}
+	.navbar-link:hover::after {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+
 	.scrolled {
 		background: var(--color-background);
 		-webkit-box-shadow: 0px 10px 30px -4px var(--color-text);

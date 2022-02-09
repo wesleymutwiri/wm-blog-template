@@ -20,7 +20,7 @@
 		font-size: 1rem;
 	}
 	.blog-card img {
-		width: 90%;
+		width: 100%;
 		height: min-content;
 		object-fit: cover;
 	}
