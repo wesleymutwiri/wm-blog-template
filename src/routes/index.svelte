@@ -49,6 +49,7 @@
 		<div class="recent-blog-image">
 			<img src="https://source.unsplash.com/random/" alt="" />
 			<h1>Create Beautiful Charts with Svelte And Chart JS</h1>
+			<p class="hidden">Some Weird title case description here, for small small things</p>
 		</div>
 	</div>
 	<!-- <div class="column other-blogs"> -->
@@ -66,6 +67,9 @@
 
 <!-- </div> -->
 <style>
+	.hidden {
+		display: none;
+	}
 	.recent-blog-image {
 		margin-right: 1rem;
 	}
@@ -95,5 +99,52 @@
 		position: fixed;
 		bottom: 4rem;
 		margin-left: 4rem;
+	}
+
+	@media (max-width: 1200px) {
+		.recent-blog-image::after {
+			position: absolute;
+			width: 100%;
+		}
+		.recent-blog-image img {
+			position: relative;
+			width: 100%;
+			padding: 0 2rem;
+		}
+		.recent-blog-image h1 {
+			font-size: 2rem;
+			margin-left: 0;
+			width: max-content;
+			position: initial;
+			padding: 0 2rem;
+		}
+
+		.row {
+			display: flex;
+			flex-direction: column;
+		}
+		.column {
+			width: 100%;
+		}
+
+		.hidden {
+			display: initial;
+			padding: 0 2rem;
+		}
+	}
+
+	@media (max-width: 850px) {
+		.recent-blog-image {
+			margin-right: 0;
+		}
+		.recent-blog-image h1 {
+			font-size: 1.5rem;
+		}
+	}
+
+	@media (max-width: 700px) {
+		.recent-blog-image h1 {
+			font-size: initial;
+		}
 	}
 </style>

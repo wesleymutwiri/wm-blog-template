@@ -2,7 +2,7 @@
 	import { onMount, onDestroy, getContext, setContext, tick } from 'svelte';
 	export let stretchFirst = false,
 		gridGap = '0',
-		colWidth = 'minmax(Min(20em, 100%), 1fr)',
+		colWidth = 'minmax(Min(25rem, 100%), 1fr)',
 		items = []; // pass in data if it's dynamically updated
 	let grids = [],
 		masonryElement;
@@ -115,6 +115,19 @@
 			width: 50%;
 			display: grid;
 			grid-template-rows: masonry;
+		}
+	}
+	@media (max-width: 1200px) {
+		.__grid--masonry {
+			width: 100%;
+			margin-top: 2rem;
+		}
+	}
+
+	@media (max-width: 700px) {
+		:global(.__grid--masonry) {
+			grid-template-columns: repeat(auto-fit, var(--col-width));
+			margin-top: 0;
 		}
 	}
 </style>
