@@ -1,40 +1,35 @@
-# create-svelte
+# WM Blog Template
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A simple svelte kit based blog template for building a markdown powered blog website using [Svelte kit](https://kit.svelte.dev/)
 
-## Creating a project
+:point_right: [Live demo](https://wm-blogtemplate.netlify.app)
 
-If you're seeing this, you've probably already done this step. Congrats!
+![Dark Theme Design](/demo-images/dark-theme.png?raw=true 'Dark Theme')
+![Light Theme Design](/demo-images/light-theme.png?raw=true 'Light Theme')
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Getting Started
 
 ```bash
+npx degit wesleymutwiri/wm-blog-template my-blog
+cd my-blog
+npm i
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+On [localhost:3000](http://localhost:3000) you'll find the site so you can click around and see how it looks.
 
-To create a production version of your app:
+## Technologies Used
 
-```bash
-npm run build
-```
+- CSS
+- Svelte kit
 
-You can preview the production build with `npm run preview`.
+## Font used
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment.
+For those interested in the font selection for the site, the font families used are
+
+- [IBM Plex Sans](https://fonts.google.com/specimen/IBM+Plex+Sans)
+- [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
+
+## Bugs and Issues
+
+If there are any bugs or issues kindly open a [new issue](https://github.com/wesleymutwiri/wm-blog-template/issues/new) and I'll get started on fixing it as soon as possible
