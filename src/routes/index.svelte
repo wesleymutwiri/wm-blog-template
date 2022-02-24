@@ -44,6 +44,10 @@
 	// if (blogs.length && )
 </script>
 
+<svelte:head>
+	<title>WM blog</title>
+</svelte:head>
+
 <div class="row blogs">
 	<div class="column">
 		<div class="recent-blog-image">
@@ -102,21 +106,24 @@
 	}
 
 	@media (max-width: 1200px) {
+		.recent-blog-image {
+			position: relative;
+			padding: 2rem;
+		}
+
 		.recent-blog-image::after {
 			position: absolute;
 			width: 100%;
 		}
 		.recent-blog-image img {
-			position: relative;
 			width: 100%;
-			padding: 0 2rem;
+			position: initial;
 		}
 		.recent-blog-image h1 {
 			font-size: 2rem;
 			margin-left: 0;
 			width: max-content;
 			position: initial;
-			padding: 0 2rem;
 		}
 
 		.row {
@@ -129,7 +136,6 @@
 
 		.hidden {
 			display: initial;
-			padding: 0 2rem;
 		}
 	}
 
@@ -138,7 +144,8 @@
 			margin-right: 0;
 		}
 		.recent-blog-image h1 {
-			font-size: 1.5rem;
+			/* font-size: 1.5rem; */
+			width: auto;
 		}
 	}
 
@@ -146,5 +153,14 @@
 		.recent-blog-image h1 {
 			font-size: initial;
 		}
+	}
+	@media (max-width: 500px) {
+		.recent-blog-image h1,
+		.recent-blog-image img,
+		.recent-blog-image p {
+			padding: 0;
+		}
+		/* .recent-blog-image h1 {
+		} */
 	}
 </style>

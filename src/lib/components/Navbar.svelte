@@ -33,6 +33,7 @@
 		position: fixed;
 		width: 100%;
 		top: 0;
+		z-index: 1;
 	}
 	.title {
 		background: var(--color-background);
@@ -51,7 +52,7 @@
 	.navbar-links {
 		display: flex;
 		align-items: center;
-		padding-right: 2rem ;
+		padding-right: 2rem;
 	}
 
 	.navbar-link {
@@ -90,5 +91,16 @@
 	}
 	.scrolled .title {
 		padding: 0;
+	}
+	@media (max-width: 500px) {
+		.navbar-links {
+			padding-right: 0;
+		}
+		.navbar-link {
+			margin: 0 1rem;
+		}
+		.navbar {
+			padding: 1.5rem 1rem;
+		}
 	}
 </style>

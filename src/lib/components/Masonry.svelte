@@ -110,24 +110,22 @@
 	:global(.__grid--masonry.__stretch-first > *:first-child) {
 		grid-column: 1/ -1;
 	}
-	@supports (grid-template-rows: masonry) {
+	/* @supports (grid-template-rows: masonry) {
 		.__grid--masonry {
 			width: 50%;
 			display: grid;
 			grid-template-rows: masonry;
 		}
-	}
+	} */
 	@media (max-width: 1200px) {
 		.__grid--masonry {
 			width: 100%;
-			margin-top: 2rem;
 		}
 	}
 
 	@media (max-width: 700px) {
 		:global(.__grid--masonry) {
 			grid-template-columns: repeat(auto-fit, var(--col-width));
-			margin-top: 0;
 		}
 	}
 </style>
